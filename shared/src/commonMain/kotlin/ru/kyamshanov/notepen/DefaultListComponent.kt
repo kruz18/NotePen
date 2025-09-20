@@ -12,7 +12,7 @@ class DefaultListComponent(
 
     override val model: Value<Model> =
         MutableValue(Model(items = List(100) {
-            if(it == 0) """C:\Users\undfr\Documents\English\Student's Book_202509160920_22009.pdf"""
+            if(it == 0) """C:\Users\kruz18\Documents\English\Voc In Use Upper-Interm_202509160923_58831.pdf"""
             else "Item $it" }))
 
     override fun onItemClicked(item: String) {
