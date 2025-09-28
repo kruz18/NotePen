@@ -3,7 +3,7 @@ kotlin = "2.1.0"
 agp = "8.6.1"
 androidx-activityCompose = "1.9.3"
 androidx-ui-tooling = "1.7.4"
-compose-multiplatform = "1.7.0"
+compose-multiplatform = "1.9.0"
 kotlinx-serialization = "1.7.3"
 decompose = "3.2.2"
 essenty = "2.4.0"
@@ -11,6 +11,7 @@ android-compileSdk = "35"
 android-minSdk = "24"
 kotlin-logging = "7.0.13"
 slf4j = "2.0.17"
+apache-pdfbox = "3.0.5"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -25,6 +26,7 @@ kotlin-logging-jvm = { module = "io.github.oshai:kotlin-logging", version.ref = 
 kotlin-logging-android = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+apache-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "apache-pdfbox" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

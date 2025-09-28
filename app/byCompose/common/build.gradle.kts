@@ -56,8 +56,7 @@ kotlin {
             implementation(libs.kotlin.logging.jvm)
             implementation(libs.slf4j.api)
             implementation(libs.slf4j.simple)
-            // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
-            implementation("org.apache.pdfbox:pdfbox:3.0.5")
+            implementation(libs.apache.pdfbox)
         }
     }
 }
