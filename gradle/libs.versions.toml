@@ -9,6 +9,8 @@ decompose = "3.2.2"
 essenty = "2.4.0"
 android-compileSdk = "35"
 android-minSdk = "24"
+kotlin-logging = "7.0.13"
+slf4j = "2.0.17"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -18,6 +20,11 @@ kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
 decompose-compose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
 lifecycle-coroutines = { module = "com.arkivanov.essenty:lifecycle-coroutines", version.ref = "essenty" }
+kotlin-logging-common = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+kotlin-logging-jvm = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+kotlin-logging-android = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

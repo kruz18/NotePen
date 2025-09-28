@@ -21,7 +21,17 @@ kotlin {
         commonMain.dependencies {
             //decompose
             implementation(libs.decompose)
-
+            implementation(libs.kotlin.logging.common)
+        }
+        androidMain.dependencies {
+            implementation(libs.kotlin.logging.android)
+            implementation(libs.slf4j.api)
+            implementation(libs.slf4j.simple)
+        }
+        jvmMain.dependencies {
+            implementation(libs.kotlin.logging.jvm)
+            implementation(libs.slf4j.api)
+            implementation(libs.slf4j.simple)
         }
     }
 }

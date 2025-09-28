@@ -40,6 +40,7 @@ kotlin {
 
 compose.desktop {
     application {
+
         mainClass = "MainKt"
 
         nativeDistributions {
@@ -74,5 +75,7 @@ compose.desktop {
             isEnabled.set(true)
             configurationFiles.from("proguard-rules.pro")
         }
+
+        jvmArgs += listOf("-Dorg.slf4j.simpleLogger.defaultLogLevel=DEBUG")
     }
 }

@@ -1,5 +1,10 @@
 package ru.kyamshanov.notepen
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+
 /**
  * Полная информация о PDF документе
  *

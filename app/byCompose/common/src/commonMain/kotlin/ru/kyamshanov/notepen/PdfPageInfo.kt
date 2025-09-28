@@ -1,5 +1,10 @@
 package ru.kyamshanov.notepen
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+
 /**
  * Информация об отдельной странице PDF документа
  *
@@ -42,3 +47,41 @@ data class PdfPageInfo(
             else -> width to height
         }
 }
+
+/**
+ * Расширения для работы с размерами в dp
+ */
+
+val PdfPageInfo.widthDp: Dp
+    @Composable
+    get() = with(LocalDensity.current) {
+        (width / 72f * 160).toDp() // points -> inches -> dp (1 inch = 160 dp)
+    }
+
+val PdfPageInfo.heightDp: Dp
+    @Composable
+    get() = with(LocalDensity.current) {
+        (height / 72f * 160).toDp()
+    }
+
+val PdfPageInfo.effectiveWidthDp: Dp
+    @Composable
+    get() = with(LocalDensity.current) {
+        val (effectiveWidth, _) = effectiveDimensions
+        (effectiveWidth / 72f * 160).toDp()
+    }
+
+val PdfPageInfo.effectiveHeightDp: Dp
+    @Composable
+    get() = with(LocalDensity.current) {
+        val (_, effectiveHeight) = effectiveDimensions
+        (effectiveHeight / 72f * 160).toDp()
+    }
+
+val PdfPageInfo.sizeDp: Pair<Dp, Dp>
+    @Composable
+    get() = widthDp to heightDp
+
+val PdfPageInfo.effectiveSizeDp: Pair<Dp, Dp>
+    @Composable
+    get() = effectiveWidthDp to effectiveHeightDp

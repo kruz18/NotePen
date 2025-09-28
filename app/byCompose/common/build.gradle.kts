@@ -39,16 +39,23 @@ kotlin {
 
             implementation(projects.app.byCompose.theme)
             implementation(projects.app.byCompose.uikit)
+
+            implementation(libs.kotlin.logging.common)
         }
 
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.kotlin.logging.android)
+            implementation(libs.slf4j.api)
+            implementation(libs.slf4j.simple)
         }
 
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
-
+            implementation(libs.kotlin.logging.jvm)
+            implementation(libs.slf4j.api)
+            implementation(libs.slf4j.simple)
             // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
             implementation("org.apache.pdfbox:pdfbox:3.0.5")
         }

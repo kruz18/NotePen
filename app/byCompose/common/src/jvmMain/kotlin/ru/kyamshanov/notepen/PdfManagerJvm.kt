@@ -5,10 +5,14 @@ import org.apache.pdfbox.rendering.PDFRenderer
 import java.io.File
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.toComposeImageBitmap
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.apache.pdfbox.Loader
 import java.awt.image.BufferedImage
 
 class PdfManagerJvm(private val filePath: String) : PdfManager {
+
+    private val logger = KotlinLogging.logger {}
+
     private val document: PDDocument
     private val renderer: PDFRenderer
 
@@ -82,6 +86,7 @@ class PdfManagerJvm(private val filePath: String) : PdfManager {
     override fun renderPage(pageIndex: Int, scale: Float): ImageBitmap? {
         return try {
             if (pageIndex in 0 until metadata.pageCount) {
+                logger.debug { "Render page #$pageIndex with scale: $scale" }
                 val bufferedImage: BufferedImage = renderer.renderImage(pageIndex, scale)
                 bufferedImage.toComposeImageBitmap()
             } else {

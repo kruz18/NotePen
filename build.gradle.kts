@@ -10,7 +10,7 @@ plugins {
 }
 
 // task for easy run
-tasks.register("runDesktop"){
+tasks.register("runDesktop") {
     group = "_launch"
     dependsOn(":app:byCompose:desktop:run")
 }
